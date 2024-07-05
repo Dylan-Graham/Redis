@@ -4,6 +4,8 @@
 ## Results
 
 ### Load test on /users endpoint (no Redis)
+
+Environment: M1 Macbook Air (ideally we should test on a basic tier cloud instance)
 ```
 (base) dylangraham@Dylans-MacBook-Air performance % k6 run load-test-users.js 
 
