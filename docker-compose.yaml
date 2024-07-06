@@ -1,6 +1,11 @@
 version: '3.8'
 
 services:
+
+  redis:
+    build: ./redis
+    ports:
+      - "6379:6379"
   
   db:
     build: ./db
@@ -22,6 +27,11 @@ services:
       - "3000:3000"
     depends_on:
       - db
+    deploy:
+      resources:
+        limits:
+          cpus: '1.0'
+          memory: 1750M
 
   adminer:
     image: adminer
