@@ -6,6 +6,7 @@ services:
     build: ./redis
     ports:
       - "6379:6379"
+      - "8001:8001"
   
   db:
     build: ./db
@@ -27,6 +28,7 @@ services:
       - "3000:3000"
     depends_on:
       - db
+      # - redis
     deploy:
       resources:
         limits:
